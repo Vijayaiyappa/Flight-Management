@@ -1,0 +1,21 @@
+POST http://127.0.0.1:8000/home/signup 
+Content-Type: application/json
+
+{ "username": "vijay", "password": "Pass1234!", "email": "vijay@mail.com" }
+
+###
+
+POST http://127.0.0.1:8000/home/login 
+Content-Type: application/json
+
+{ "username": "vijay", "password": "Pass1234!" }
+
+###
+
+GET http://127.0.0.1:8000/home/test_token 
+Content-Type: application/json 
+Authorization: token cae75142f9f252617ee8d7fea1060f97a0f6bc48
+
+### DELETE Request to Delete an Item
+DELETE http://127.0.0.1:8000/home/flights/7/
+Content-Type: application/json

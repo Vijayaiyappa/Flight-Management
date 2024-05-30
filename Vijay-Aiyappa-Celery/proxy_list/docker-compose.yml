@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  web:
+    command:  python manage.py runserver 0.0.0.0:8000
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+    networks:
+      - my_network
+
+  celery_worker:
+    volumes:
+      - .:/django
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command:  celery -A proxy_list worker -l DEBUG
+    depends_on:
+      - redis
+    networks:
+      - my_network
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    networks:
+      - my_network
+
+networks:
+  my_network:

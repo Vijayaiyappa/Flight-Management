@@ -1,14 +1,14 @@
 POST http://127.0.0.1:8000/home/signup 
 Content-Type: application/json
 
-{ "username": "vijay", "password": "Pass1234!", "email": "vijay@mail.com" }
+{ "username": "vijay", "password": "#####", "email": "####y@mail.com" }
 
 ###
 
 POST http://127.0.0.1:8000/home/login 
 Content-Type: application/json
 
-{ "username": "vijay", "password": "Pass1234!" }
+{ "username":  "#####", "password": "####" }
 
 ###
 

@@ -1,5 +1,0 @@
-Django
-celery==5.2.3
-redis==4.0.2
-requests
-django-celery-results
